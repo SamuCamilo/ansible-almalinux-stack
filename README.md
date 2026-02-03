@@ -18,4 +18,4 @@ Você pode customizar a instalação alterando as variáveis em `roles/webserver
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/SamuCamilo/ansible-almalinux-stack](https://github.com/SamuCamilo/ansible-almalinux-stack)
+   git clone [https://github.com/SamuCamilo/ansible-almalinux-stack.git](https://github.com/SamuCamilo/ansible-almalinux-stack.git)
