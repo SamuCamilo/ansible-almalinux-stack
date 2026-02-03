@@ -1,0 +1,10 @@
+---
+php_version: "8.5"
+# Lista de módulos padrão. O usuário pode expandir esta lista.
+php_modules:
+  - php-gd
+  - php-mysqlnd
+  - php-xml
+  - php-mbstring
+  - php-json
+  - php-curl

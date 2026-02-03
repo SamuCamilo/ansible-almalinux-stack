@@ -1,0 +1,8 @@
+---
+- name: Restart Services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  loop:
+    - httpd
+    - php-fpm

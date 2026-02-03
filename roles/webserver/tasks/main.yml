@@ -1,0 +1,29 @@
+---
+- name: Instalar repositórios EPEL e Remi
+  dnf:
+    name:
+      - epel-release
+      - https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+    state: present
+    disable_gpg_check: yes
+
+- name: Resetar e Habilitar módulo PHP Remi {{ php_version }}
+  shell: |
+    dnf module reset php -y
+    dnf module enable php:remi-{{ php_version }} -y
+  changed_when: false
+
+- name: Instalar Apache, Java 17 e PHP com módulos dinâmicos
+  dnf:
+    name: "{{ ['httpd', 'php', 'php-fpm', 'java-17-openjdk-devel'] + php_modules }}"
+    state: present
+  notify: Restart Services
+
+- name: Garantir serviços ativos e habilitados
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  loop:
+    - httpd
+    - php-fpm
