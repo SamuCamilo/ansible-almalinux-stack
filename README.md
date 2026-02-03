@@ -19,7 +19,7 @@ Você pode customizar a instalação alterando as variáveis em `roles/webserver
 1. Configurar o Inventário (inventory.ini)
 O arquivo de inventário diz ao Ansible em qual servidor ele deve trabalhar. Abra o arquivo inventory.ini e adicione o IP do seu servidor:
 
-inventory.ini
+Ini, TOML
 [meu_servidor]
 192.168.1.10 ansible_user=seu_usuario ansible_ssh_private_key_file=~/.ssh/id_rsa
 Nota: Substitua 192.168.1.10 pelo IP real do seu servidor e seu_usuario pelo usuário com permissões de sudo (como o root).
